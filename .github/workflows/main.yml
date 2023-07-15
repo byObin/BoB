@@ -25,11 +25,21 @@ jobs:
         run: |
           echo "${{ steps.python-version.outputs.stdout }}" >> python_${{ matrix.python-version }}.txt
 
-      - name: Upload artifact
+      - name: Upload artifact - Python 3.8
         uses: actions/upload-artifact@v2
         with:
-          name: python-versions
-          path: |
-            python_3.8.txt
-            python_3.9.txt
-            python_3.10.txt
+          name: python-3.8
+          path: python_3.8.txt
+
+      - name: Upload artifact - Python 3.9
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-3.9
+          path: python_3.9.txt
+
+      - name: Upload artifact - Python 3.10
+        uses: actions/upload-artifact@v2
+        with:
+          name: python-3.10
+          path: python_3.10.txt
+
